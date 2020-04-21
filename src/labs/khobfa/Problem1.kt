@@ -19,9 +19,9 @@ fun main() {
 fun summationMultiplesOf5And3(start: Int, end: Int): Int {
     var sum = 0
     for (i in start until end) {
-        if (i % 3 == 0 || i % 5 == 0) {
+        if (i % 3 == 0 || i % 5 == 0)
             sum += i
-        }
+
     }
     return sum
 }
