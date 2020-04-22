@@ -3,7 +3,7 @@ package labs.khobfa
 fun main() {
     println("fibonacci 5 ${fibonacciRecursive(10)}")
     println("fibonacci 5 ${fibonacciOptimized(10)}")
-    println("fibonacci 5 ${sumEvenFibonacci(10)}")
+    println("fibonacci 5 ${sumEvenFibonacci(3_999_999)}")
     println("fibonacci 5 ${sumOddFibonacci(10)}")
 }
 
@@ -28,12 +28,14 @@ fun fibonacciOptimized(n: Int): Int {
 }
 
 fun sumEvenFibonacci(n: Int): Int {
-    var a = 0
-    var b = 1
-    var c: Int
-    var sum: Int = 0
+    var a = 1
+    print("$a, ")
+    var b = 2
+    print("$b, ")
+    var c: Int = 0
+    var sum: Int = 2
 
-    for (i in 2..n) {
+    while (c <= n) {
         c = a + b
         a = b
         b = c
