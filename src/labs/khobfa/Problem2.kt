@@ -1,5 +1,8 @@
 package labs.khobfa
 
+/***
+ * Quiz - find sum of even numbers that does not exceed 4_000_000
+ */
 fun main() {
     println("fibonacci 5 ${fibonacciRecursive(10)}")
     println("fibonacci 5 ${fibonacciOptimized(10)}")
