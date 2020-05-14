@@ -6,8 +6,9 @@ import kotlin.math.sqrt
  * Find the greatest prime factor of a number
  */
 fun main() {
+    findPrime()
 //    findPrimeFactors(600851475143)
-    println("\nLargest prime factor >>>> ${findLargestPrimeFactor(600851475143)}")
+//    println("\nLargest prime factor >>>> ${findLargestPrimeFactor(600851475143)}")
 }
 
 fun findPrimeFactors(n: Long) {
@@ -57,4 +58,23 @@ fun findLargestPrimeFactor(n: Long): Int {
         largest = num.toInt()
     }
     return largest
+}
+
+
+fun findPrime() {
+    var low = 1
+    val high = 20
+    while (low < high) {
+        var flag = false
+
+        for (i in 2..low / 2) {
+            // condition for nonprime number
+            if (low % i == 0) {
+                flag = true
+                break
+            }
+        }
+        if (!flag && low != 0 && low != 1) print("$low ")
+        ++low
+    }
 }

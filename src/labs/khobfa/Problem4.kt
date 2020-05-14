@@ -3,11 +3,25 @@ package labs.khobfa
 // find largest palindrome product of two3-digit number
 fun main() {
     // println("Palindrome product == ${findPalindromeProduct()}")
-    reverse(1001)
+    println(reverse2(329))
+//    reverse(1001)
 
-    val capitalCities = mapOf(
-            "Kenya" to "Nairobi"
-    )
+//    val capitalCities = mapOf(
+//            "Kenya" to "Nairobi"
+//    )
+}
+
+fun reverse2(num: Int): Int {
+    var number = num
+    var reduced: Int
+    var reversed = 0
+
+    while(number > 0) {
+        reduced = number % 10
+        reversed = (reversed * 10) + reduced
+        number /= 10
+    }
+    return reversed
 }
 fun findPalindromeProduct(): Int {
     var n = 0
@@ -45,13 +59,10 @@ fun reverse(num: Int): Int {
     var number = num
     var reversed = 0
     var reduced: Int
-    var count = 1
     while (number > 0) {
         reduced = number % 10
         reversed = (reversed * 10) + reduced
         number /= 10
-        println("count: $count >>>> reduced:$reduced >>>> reversed:$reversed >>>> number:$number")
-        ++count
     }
 
     return reversed
