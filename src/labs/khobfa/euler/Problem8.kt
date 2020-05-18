@@ -3,6 +3,7 @@ package labs.khobfa
 import java.lang.NumberFormatException
 import java.util.*
 import kotlin.math.max
+import kotlin.math.pow
 
 fun main() {
     val numbers = "73167176531330624919225119674426574742355349194934" +
