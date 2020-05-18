@@ -1,4 +1,4 @@
-package labs.khobfa.lettcode;
+package labs.khobfa.leetcode;
 
 public class ConsecutiveOnes {
 
