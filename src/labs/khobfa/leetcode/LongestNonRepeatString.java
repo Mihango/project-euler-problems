@@ -9,7 +9,7 @@ public class LongestNonRepeatString {
     public static void main(String[] args) {
         String s = "dvdf";
         String s2 = "pwwkew";
-        System.out.println(lengthOfLongestSubstring2(s2));
+//        System.out.println(lengthOfLongestSubstring2(s2));
         System.out.println(lengthOfLongestSubstring(s2));
     }
 
@@ -38,11 +38,12 @@ public class LongestNonRepeatString {
         int count = 0;
 
         for (int j = 0, i = 0; j < s.length(); j++) {
-            if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);
+            char ch = s.charAt(j);
+            if (map.containsKey(ch)) {
+                i = Math.max(map.get(ch), i);
             }
             count = Math.max(count, j - i + 1);
-            map.put(s.charAt(j), j+1);
+            map.put(ch, j+1);
         }
 
         return count;
