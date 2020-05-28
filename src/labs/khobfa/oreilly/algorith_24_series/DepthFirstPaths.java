@@ -1,7 +1,7 @@
 package labs.khobfa.oreilly.algorith_24_series;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class DepthFirstPaths extends Paths {
 
@@ -10,15 +10,30 @@ public class DepthFirstPaths extends Paths {
 
     public DepthFirstPaths(UndirectedGraph graph, int source) {
         super(graph, source);
-        marked = new boolean[graph.getAdj().length];
-        edgeTo = new Integer[graph.getAdj().length];
+        marked = new boolean[graph.getVertices()];
+        edgeTo = new Integer[graph.getVertices()];
         depthFirstSearch(graph, source);
     }
 
     @Override
     public boolean hasPathTo(int node) {
-        return pathTo(node) != null;
+        return marked[node];
     }
+
+    @Override
+    public Iterable<Integer> pathTo(int node) {
+        if(!hasPathTo(node)) return null;
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(node);
+
+        while (edgeTo[node] != null) {
+            node = edgeTo[node];
+            stack.push(node);
+        }
+        return stack;
+    }
+
 
     private void depthFirstSearch(UndirectedGraph graph, int node) {
         marked[node] = true;
@@ -30,28 +45,36 @@ public class DepthFirstPaths extends Paths {
         }
     }
 
-    @Override
-    public Iterable<Integer> pathTo(int node) {
-        List<Integer> path = new ArrayList<>();
-
-//        path.add(node);
-//        while (true) {
-//            Integer edgeFrom = edgeTo[node];
-//            if (edgeFrom == null) {
-//                break;
-//            }
-//            path.add(edgeFrom);
-//            node = edgeFrom;
-//        }
+    /**
+     * @param node
+     * @return
+     *
+     * implemented recursively using an arraylist > LIFO - better option user stack
+     */
+//    @Deprecated
+//    @Override
+//    public Iterable<Integer> pathTo(int node) {
+//        List<Integer> path = new ArrayList<>();
 //
-        pathTo(path,edgeTo[node]);
-        if(path.size() > 0) {
-            path.add(node);
-            return path;
-        } else {
-            return null;
-        }
-    }
+////        path.add(node);
+////        while (true) {
+////            Integer edgeFrom = edgeTo[node];
+////            if (edgeFrom == null) {
+////                break;
+////            }
+////            path.add(edgeFrom);
+////            node = edgeFrom;
+////        }
+////
+//        pathTo(path,edgeTo[node]);
+//
+//        if(path.size() > 0) {
+//            path.add(node);
+//            return path;
+//        } else {
+//            return null;
+//        }
+//    }
 
     private void pathTo(List<Integer> list, int node) {
         if (edgeTo[node] != null) {
