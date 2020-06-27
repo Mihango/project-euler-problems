@@ -22,6 +22,16 @@ public class BinarySearchTree {
         }
     }
 
+    public void preOrderTraversal() {
+        if (root != null) {
+            root.preOrderTraversal();
+        }
+    }
+
+    public void postOrderTraversal() {
+        if(root != null) root.postOrderTraversal();
+    }
+
     public void levelTraversal() {
         if (root == null) return;
 
@@ -51,6 +61,9 @@ public class BinarySearchTree {
         return root.max();
     }
 
+    public TreeNode getRoot() {
+        return root;
+    }
 
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
@@ -64,21 +77,30 @@ public class BinarySearchTree {
         tree.insert(11);
         tree.insert(10);
         tree.insert(1);
-
+        tree.insert(15);
+        tree.insert(17);
 
         try {
-            System.out.println("\n============== InOrder Traversal ===================");
+            System.out.print("\n============== InOrder Traversal ===================\n");
             tree.inOrderTraversal();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        System.out.println("\n=================================");
-        System.out.println("Min >>>>>>>>>>> " + tree.getMin());
-        System.out.println("Max >>>>>>>>>>> " + tree.getMax());
+//        System.out.print("\n============== PreOrder Traversal ===================\n");
+//        tree.preOrderTraversal();
+//
+//        System.out.print("\n============== PostOrder Traversal ===================\n");
+//        tree.postOrderTraversal();
 
-        System.out.println("=================================");
-        tree.levelTraversal();
+//        System.out.println("\n=================================");
+//        System.out.println("Min >>>>>>>>>>> " + tree.getMin());
+//        System.out.println("Max >>>>>>>>>>> " + tree.getMax());
+//
+//        System.out.println("=================================");
+//        tree.levelTraversal();
+
+        System.out.println("\n Tree Height " + TreeHeight.findHeight(tree));
 
     }
 }

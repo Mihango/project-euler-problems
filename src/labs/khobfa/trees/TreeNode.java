@@ -10,7 +10,7 @@ public class TreeNode {
     }
 
     public void insert(int value) {
-        if(value <= this.value) {
+        if(value < this.value) {
             if(leftNode == null) {
                 leftNode = new TreeNode(value);
             } else {
@@ -30,11 +30,24 @@ public class TreeNode {
         if(leftNode != null) {
             leftNode.inOrderTraversal();
         }
+
         System.out.print(this.value + ", ");
 
         if(rightNode != null) {
             rightNode.inOrderTraversal();
         }
+    }
+
+    public void preOrderTraversal() {
+        System.out.print(value + ", ");
+        if(leftNode != null) leftNode.preOrderTraversal();
+        if (rightNode != null) rightNode.preOrderTraversal();
+    }
+
+    public void postOrderTraversal() {
+        if (leftNode != null) leftNode.postOrderTraversal();
+        if(rightNode != null) rightNode.postOrderTraversal();
+        System.out.print(value + ", ");
     }
 
     public int min() {
