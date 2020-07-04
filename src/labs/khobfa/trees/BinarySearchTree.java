@@ -1,5 +1,6 @@
 package labs.khobfa.trees;
 
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -35,7 +36,7 @@ public class BinarySearchTree {
     public void levelTraversal() {
         if (root == null) return;
 
-        Queue<TreeNode> queue = new LinkedBlockingQueue<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {

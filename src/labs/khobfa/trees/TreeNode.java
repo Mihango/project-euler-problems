@@ -27,15 +27,10 @@ public class TreeNode {
 
     // Depth First Search - InOrder (left, root, right)
     public void inOrderTraversal() {
-        if(leftNode != null) {
-            leftNode.inOrderTraversal();
-        }
-
+        if(leftNode != null) leftNode.inOrderTraversal();
         System.out.print(this.value + ", ");
+        if(rightNode != null) rightNode.inOrderTraversal();
 
-        if(rightNode != null) {
-            rightNode.inOrderTraversal();
-        }
     }
 
     public void preOrderTraversal() {

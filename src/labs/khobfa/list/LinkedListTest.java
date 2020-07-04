@@ -14,12 +14,14 @@ public class LinkedListTest {
             System.out.print(integer + " ");
         }
         System.out.println("\nReversed linked list");
-        for (Integer v: ReverseLinkedList.reverse(linkedList)) {
+        linkedList = ReverseLinkedList.reverse(linkedList.peek());
+        for (Integer v: linkedList) {
             System.out.print(v + " ");
         }
 
         System.out.println("\nOriginal linked list");
-        for (Integer v: ReverseLinkedList.reverse(linkedList)) {
+        linkedList = ReverseLinkedList.recursive(linkedList.peek());
+        for (Integer v: linkedList) {
             System.out.print(v + " ");
         }
     }
