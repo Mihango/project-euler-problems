@@ -1,8 +1,6 @@
 package labs.khobfa;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 class Solution {
     public int solution(int[] A) {
@@ -44,10 +42,10 @@ class Solution {
 //        Solution solution = new Solution();
 //        System.out.println(solution.solution(new int[]{3, 5, 6, 3, 3, 5}));
 //        System.out.println(getDecimal(4672));
-        int count = 2;
-        int num2 = 0;
-        num2 += (5) * (count > 0 ? count * 10 : 1);
-        System.out.println(num2);
+//        int count = 2;
+//        int num2 = 0;
+//        num2 += (5) * (count > 0 ? count * 10 : 1);
+//        System.out.println(num2);
     }
 
     public static int getDecimal(int binary){
