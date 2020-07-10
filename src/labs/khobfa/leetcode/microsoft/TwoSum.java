@@ -17,29 +17,49 @@ public class TwoSum {
 
     public static int[] twoSums(int[] nums, int target) {
         boolean isFound = false;
-        int[] result = new int[2];
+        int i = 0;
+        int j = i + 1;
 
-        for(int i = 0; i < nums.length - 1; i++) {
-            for (int j = i+1; j < nums.length; j++) {
+        for (i = 0; i < nums.length - 1; i++) {
+            for (j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
-                    result[0] = i;
-                    result[1] = j;
                     isFound = true;
                     break;
                 }
             }
+            if (isFound) break;
         }
-
-        return isFound ? result : new int[]{-1, -1};
+        return isFound ? new int[]{i, j} : new int[]{-1, -1};
     }
+
+
+//    public static int[] twoSums(int[] nums, int target) {
+//        boolean isFound = false;
+//        int[] result = new int[2];
+//
+//        for(int i = 0; i < nums.length - 1; i++) {
+//            for (int j = i+1; j < nums.length; j++) {
+//                if (nums[i] + nums[j] == target) {
+//                    result[0] = i;
+//                    result[1] = j;
+//                    isFound = true;
+//                    break;
+//                }
+//            }
+//            if(isFound)
+//                break;
+//        }
+//
+//        return isFound ? result : new int[]{-1, -1};
+//    }
 
 
     public static int[] twoSumsOptimized(int[] nums, int target) throws Exception {
         Map<Integer, Integer> map = new HashMap<>();
 
-        for (int i =0; i< nums.length; i++) {
-            if(map.containsKey(target - nums[i])) {
-                return new int[]{i, map.get(target-nums[i])};
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{i, map.get(target - nums[i])};
             }
             map.put(nums[i], i);
         }

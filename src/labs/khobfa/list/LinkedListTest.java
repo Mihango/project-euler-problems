@@ -4,10 +4,10 @@ public class LinkedListTest {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         linkedList.insert(3);
-        linkedList.insert(1);
-        linkedList.insert(4);
-        linkedList.insert(5);
-        linkedList.insert(2);
+//        linkedList.insert(1);
+//        linkedList.insert(4);
+//        linkedList.insert(5);
+//        linkedList.insert(2);
 
         System.out.println("Linked List size >>>> " + linkedList.size());
         for (Integer integer : linkedList) {

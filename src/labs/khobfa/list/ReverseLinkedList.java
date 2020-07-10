@@ -2,6 +2,7 @@ package labs.khobfa.list;
 
 public class ReverseLinkedList {
 
+
     public static LinkedList reverse(LinkedList.Node node) {
 
         LinkedList.Node previous = null;
