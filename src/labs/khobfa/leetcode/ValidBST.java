@@ -1,6 +1,8 @@
 package labs.khobfa.leetcode;
 
 
+import com.sun.source.tree.Tree;
+
 public class ValidBST {
 
     static class TreeNode {
@@ -10,6 +12,12 @@ public class ValidBST {
         TreeNode(int x) {
             this.val = x;
         }
+        TreeNode(int x, TreeNode left, TreeNode right) {
+            this.val = x;
+            this.left = left;
+            this.right = right;
+        }
+
     }
 
     public static void main(String[] args) {
